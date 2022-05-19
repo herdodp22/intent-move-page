@@ -16,19 +16,39 @@ class myapp extends StatelessWidget {
         title: Text("halaman pertama"),
       ),
       body: Center(
-          child: RaisedButton(
-        child: Text("movepage2"),
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => halamankedua()),
-          );
-        },
-      ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            RaisedButton(
+              child: Text("movepage2"),
+              color: Colors.red,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => halamankedua()),
+                );
+              },
+            ),
+            RaisedButton(
+              child: Text("movepage3", 
+              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold,
+              fontSize: 30),),
+              color: Colors.blue,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => halamanketiga()),
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
 }
+
+
 
 class halamankedua extends StatelessWidget {
   @override
@@ -36,6 +56,25 @@ class halamankedua extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("halaman kedua"),
+      ),
+      body: Center(
+        child: RaisedButton(
+          child: Text("kembali"),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class halamanketiga extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("halaman ketiga"),
       ),
       body: Center(
         child: RaisedButton(
